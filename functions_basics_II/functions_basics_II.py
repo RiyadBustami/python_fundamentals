@@ -20,7 +20,7 @@ print(print_and_return([1, 3]))
 
 # 3 ********************************
 def first_plus_length(lst):
-    return arr[0] + len(lst)
+    return lst[0] + len(lst)
 
 
 print(first_plus_length([1, 5, 8, 7, 4, 6]))
