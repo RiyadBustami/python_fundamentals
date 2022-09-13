@@ -1,11 +1,5 @@
 class BankAccount:
-    def __init__(self):
-        self.int_rate = 0
-        self.balance = 0
-        self.currency = "USD"
-        self.type = "savings"
-
-    def __init__(self, int_rate, balance, currency, type):
+    def __init__(self, int_rate=0.00, balance=0, currency="NIS", type="Savings"):
         self.int_rate = int_rate
         self.balance = balance
         self.currency = currency
@@ -33,7 +27,9 @@ class User:
         self.name = name
         self.account = [BankAccount(int_rate, balance, currency, type)]
 
-    def create_new_account(self, int_rate, balance, currency, type):
+    def create_new_account(
+        self, int_rate=0.00, balance=0, currency="NIS", type="Savings"
+    ):
         self.account.append(BankAccount(int_rate, balance, currency, type))
 
     def make_deposit(self, account_num, amount):
@@ -74,7 +70,11 @@ riyad.display_user_balance(2)
 riyad.display_user_balance(4)
 riyad.create_new_account(0.08, 200, "EUR", "Savings")
 riyad.display_user_balance(3)
-riyad.create_new_account(0.05, 900, "JOD", "Main")
+riyad.create_new_account(0.05, 900, "USD", "Main")
+riyad.display_user_balance(4)
+ali = User("Ali", 1_000_000, "USD", "Savings", 0.04)
+ali.transfer_money(0, riyad, 4, 200_000)
+ali.display_user_balance(0)
 riyad.display_user_balance(4)
 
 
