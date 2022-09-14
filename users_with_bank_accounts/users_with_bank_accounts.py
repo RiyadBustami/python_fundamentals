@@ -23,9 +23,12 @@ class BankAccount:
 
 
 class User:
-    def __init__(self, name, balance, currency, type, int_rate):
+    def __init__(
+        self, name="Unnamed", balance=0, currency="USD", type="Savings", int_rate=0.0
+    ):
         self.name = name
-        self.account = [BankAccount(int_rate, balance, currency, type)]
+        self.account = []
+        self.create_new_account(int_rate, balance, currency, type)
 
     def create_new_account(
         self, int_rate=0.00, balance=0, currency="NIS", type="Savings"
